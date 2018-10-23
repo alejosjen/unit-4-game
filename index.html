@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Crystals Collector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" media="screen" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" media="screen" type="text/css" href="assets/css/reset.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+        </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="game-info">
+            <div class="title">
+                <h1>Crystals Collector!</h1>
+            </div>
+            <div class="instructions">
+                <p>You will be given a random number at the start of the game.</p>
+                <p>There are four cystals below. By clicking on a crystal you will add a
+                    specific amount of points to your total score.</p>
+                <p>You win the game by matching your total score to the random number. You lose
+                    the game if your total score goes above the random number.</p>
+                <p>The value of each crystal is hidden from you until you click on it.</p>
+                <p>Each time when the game starts, the game will change the values of each crystal.</p>
+            </div>
+        </div>
+        <div class="game-area">
+            <div class="numbers-row">
+                <div class="random-number-to-match">0</div>
+                <div class="wins-losses">
+                    <p>Wins:<div class="wins"></div>
+                    </p>
+                    <p>Losses:<div class="losses"></div>
+                    </p>
+                </div>
+            </div>
+            <div class="jewels">
+                <img src="assets/images/jewel1.gif" class="jewel j1" />
+                <img src="assets/images/jewel2.gif" class="jewel j2" />
+                <img src="assets/images/jewel3.gif" class="jewel j3" />
+                <img src="assets/images/jewel4.gif" class="jewel j4" />
+            </div>
+            <div class="your-score-area">
+                <p class="score-statement">Your total score is:</p>
+                <div class="score-total">0</div>
+            </div>
+            <div><small><a href="/free-vector/jewels-collection_716718.htm">Jewels Designed by Freepik</a></small></div>
+        </div>
+    </div>
+
+    <script src="assets/javascript/game.js"></script>
+</body>
+
+</html>
