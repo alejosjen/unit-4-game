@@ -5,9 +5,15 @@ var counter3 = 0;
 var counter4 = 0;
 
 var targetNumber = 55;
+
+
+function getRandom (min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+}
+targetNumber = getRandom(19, 120);
 $(".random-number-to-match").text(targetNumber);
 
-var numberOptions = [10, 5, 3, 7];
+var numberOptions = [20, 5, 3, 7];
 
 $(".jewel").each(function(i, el) {
     $(el).attr('data-crystalvalue', numberOptions[i])
