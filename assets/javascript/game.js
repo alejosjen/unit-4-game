@@ -3,36 +3,39 @@ var counter = 0;
 var targetNumber = 0;
 var wins = 0;
 var losses = 0;
+var numberOptions = 0;
 
-// Get random number from 19-120 and display at .random-number-to-match
+// Get random number for target number
 function getRandom(min, max) {
     return Math.round(Math.random() * (max - min) + min);
 }
 
+// Set target number to random and display on screen
 function setTargetNumber() {
     targetNumber = getRandom(19, 120);
     $(".random-number-to-match").text(targetNumber);
 }
 
-//Reset
-function reset(){
-    counter = 0;
-    setTargetNumber();
+// Create an array of length 4, randomize each item, return value
+function setJewelValues() {
+    var optionsArray = Array.from({ length: 4 }, () => Math.ceil(Math.random() * 12));
+    console.log(optionsArray);
+    numberOptions = optionsArray;
 }
 
-function changeCurrentScore(score){
-    counter = score;
+//Function to display numbers on page
+function reset() {
+    counter = 0;
+    setTargetNumber();
+    setJewelValues();
+    $(".score-total").text(counter)
+    $(".jewel").each(function (i, el) {
+        $(el).attr('data-crystalvalue', numberOptions[i])
+    });
 }
 
 //Start game
 reset();
-
-// Create a value for each jewel from the numberOptions array
-var numberOptions = [12, 5, 3, 9];
-
-$(".jewel").each(function (i, el) {
-    $(el).attr('data-crystalvalue', numberOptions[i])
-});
 
 // On click function for each jewel to be assigned a value
 // Increase counter with each click
@@ -50,15 +53,12 @@ $(".jewel").on("click", function () {
         wins++;
         $(".wins-counter").text(wins);
         reset();
-        $(".score-total").text(counter)
     }
     else if (counter >= targetNumber) {
         alert("You lose!");
         losses++;
         $(".losses-counter").text(losses);
         reset();
-        $(".score-total").text(counter)
     }
-
 });
 
